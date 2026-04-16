@@ -14,12 +14,12 @@ jobs:
         with:
           node-version: '20'
 
-      # TODO: Add actions/cache@v4 for the npm cache
-      # - uses: actions/cache@v4
-      #   with:
-      #     path: ~/.npm                              ⬅️ npm's cache directory
-      #     key: ???                                  ⬅️ should include OS + lock file hash
-      #     restore-keys: ???                         ⬅️ fallback: OS-only prefix
+      - uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
 
       - run: npm ci
       - run: npm run lint
@@ -32,8 +32,12 @@ jobs:
         with:
           node-version: '20'
 
-      # TODO: Add the same cache step here
-      # Hint: use the exact same key/restore-keys — the cache is shared across jobs
+      - uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
 
       - run: npm ci
       - run: npm test
@@ -47,7 +51,12 @@ jobs:
         with:
           node-version: '20'
 
-      # TODO: Add the same cache step here
+      - uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
 
       - run: npm ci
       - run: npm run build
