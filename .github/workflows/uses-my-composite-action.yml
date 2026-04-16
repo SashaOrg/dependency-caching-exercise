@@ -10,7 +10,7 @@ jobs:
       - id: foo
         uses: OWNER/REPONAME/ACTION_FOLDER@BRANCH_NAME #⬅️ Change this 
         with:
-          who-to-greet: <ENTER_YOUR_NAME> #⬅️ Note
+          who-to-greet: Sasha #⬅️ Note
       - run: echo random-number "$RANDOM_NUMBER"
         shell: bash
         env:
