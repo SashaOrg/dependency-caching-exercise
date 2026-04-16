@@ -1,0 +1,27 @@
+{
+  "name": "dependency-caching-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --max-warnings 0 || true",
+    "test": "jest --passWithNoTests",
+    "build": "echo 'Build complete'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SashaOrg/dependency-caching-exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SashaOrg/dependency-caching-exercise/issues"
+  },
+  "homepage": "https://github.com/SashaOrg/dependency-caching-exercise#readme",
+  "devDependencies": {
+    "eslint": "^10.2.0",
+    "jest": "^30.3.0"
+  }
+}
